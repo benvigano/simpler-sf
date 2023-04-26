@@ -25,7 +25,7 @@ The advantages over the existing methods are:
 ##### Example
 ```python 
 sf = simple_salesforce.Salesforce(username=username, password=password, security_token=token)
-df = sf.smart_query('SELECT Contact__r.Name, Account__r.Name Id FROM Call__c')
+df = sf.smart_query('SELECT Contact.Name, Account.Name Id FROM Call')
 ```
 
 ##### Example with filtering
