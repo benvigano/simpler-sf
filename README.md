@@ -7,8 +7,8 @@ Extending the low-level Salesforce API client [Simple Salesforce](https://github
 
 ### Importing
 ```python
-import simpler-sf
-simpler-sf.simple_salesforce()
+import simpler_sf
+simpler_sf.simple_salesforce()
 import simple_salesforce
 # That's it!
 ```
