@@ -15,7 +15,7 @@ setup(
    long_description_content_type='text/markdown',
    author='benvigano',
    author_email='beniamino.vigano@protonmail.com',
-   url="https://github.com/benvigano/simpler_sf",
+   url="https://github.com/benvigano/simpler-sf",
    keywords='Salesforce, Simple Salesforce, Pandas, Dataframe, Unpack Salesforce',
    packages=['simpler_sf'],
 )
