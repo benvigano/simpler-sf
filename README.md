@@ -5,14 +5,14 @@ Extending the low-level Salesforce API client [Simple Salesforce](https://github
 ### Install
 `pip install simpler-sf`
 
-### Importing
+### Import
 ```python
 import simpler_sf
 simpler_sf.simple_salesforce()
 import simple_salesforce
 # That's it!
 ```
-### Querying
+### Query
 Simpler-sf adds the `smart_query()` method to the `simple_salesforce.Salesforce` class.
 
 The advantages over the existing methods are:
