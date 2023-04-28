@@ -20,29 +20,19 @@ The advantages over the existing methods are:
 - Un-nesting of results for relationship queries (aka the infamous `'attributes'` dictionary) 
 - No limit on the number of output rows as in `simple_salesforce.Salesforce.query()` **and** at the same time...
 - No need to use a different class for each Salesforce object as in `sf.bulk.Account.query(query)`
-- The option to filter dynamically, on large amounts of values without a limit on the number of characters (see example below)
+- The option to filter dynamically, on large amounts of values without a limit on the number of characters
 
 #### Example
 ```python 
 sf = simple_salesforce.Salesforce(username=username, password=password, security_token=token)
-df = sf.smart_query('SELECT Contact.Name, Account.Name Id FROM Call')
+df = sf.smart_query('SELECT Id, FirstName, Account.Name FROM Contact')
+print(df)
 ```
-
-#### Example with filtering
-```python 
-sf = simple_salesforce.Salesforce(username=username, password=password, security_token=token)
-
-ids = ['0032400000QZbmtAAD', '0032400000eGqdZAAS', '00324036u9QZbnGAAT', '50130000000014C']
-query = \
-'''
-SELECT
-Id,
-FirstName,
-LastName,
-Pronouns,
-Phone,
-Email
-FROM Contact
-'''
-df = sf.smart_query(query, filter_field='Id', filter_values=ids)
+Output:
+```
+                    Id    FirstName   Account.Name
+0   0032400000QZbmtAAD        Emily         Amazon
+1   0032400000eGqdZAAS      Jasmine         Amazon
+2   00324036u9QZbnGAAT         Míng      Microsoft
+3   0032400000QZbygAAX    Magdalena         Google
 ```
