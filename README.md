@@ -12,7 +12,7 @@ simpler_sf.simple_salesforce()
 import simple_salesforce
 # That's it!
 ```
-### `smart_query()`
+### Querying
 Simpler-sf adds the `smart_query()` method to the `simple_salesforce.Salesforce` class.
 
 The advantages over the existing methods are:
@@ -22,13 +22,13 @@ The advantages over the existing methods are:
 - No need to use a different class for each Salesforce object as in `sf.bulk.Account.query(query)`
 - The option to filter dynamically, on large amounts of values without a limit on the number of characters (see example below)
 
-##### Example
+#### Example
 ```python 
 sf = simple_salesforce.Salesforce(username=username, password=password, security_token=token)
 df = sf.smart_query('SELECT Contact.Name, Account.Name Id FROM Call')
 ```
 
-##### Example with filtering
+#### Example with filtering
 ```python 
 sf = simple_salesforce.Salesforce(username=username, password=password, security_token=token)
 
