@@ -163,7 +163,7 @@ def _smart_query(
     output_df = pd.concat(dfs)
         
     # If the query didn't output any records, add the columns for output consistency
-    if len(dfs) == 0:
+    if output_df.shape[0] == 0:
         # Determine the columns from the query
         output_df = pd.DataFrame(columns=_determine_fields(query))
     else:
