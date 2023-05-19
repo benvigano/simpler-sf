@@ -77,6 +77,16 @@ def _determine_object(query):
     return re.split(" from ", query, flags=re.IGNORECASE)[1].split(" ")[0]
 
 
+def _determine_fields(query):
+    '''Parse a query to determine the fields'''
+    
+    before_from = re.split(" from ", query, flags=re.IGNORECASE)[0]
+    after_select = re.split("select ", before_from, flags=re.IGNORECASE)[1]
+    fields = after_select.replace(" ", "").split(",")
+    
+    return fields
+
+
 def _generate_sub_queries(query, filter_field, filter_values, not_in):
     '''
     Split the input query in multiple sub-queries that respect Salesforce 10,000 character limit.
@@ -149,8 +159,17 @@ def _smart_query(
         results = _unnest_query_output(object.query(sub_query))    
         partial_df = pd.DataFrame(results)
         dfs.append(partial_df)
+        
+    output_df = pd.concat(dfs)
+        
+    # If the query didn't output any records, add the columns for output consistency
+    if len(dfs) == 0:
+        # Determine the columns from the query
+        output_df = pd.DataFrame(columns=_determine_fields(query))
+    else:
+        pass
                     
-    return pd.concat(dfs)
+    return output_df
 
 
 def simple_salesforce():
