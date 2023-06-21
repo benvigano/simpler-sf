@@ -82,7 +82,7 @@ def _determine_fields(query):
     
     before_from = re.split(" from ", query, flags=re.IGNORECASE)[0]
     after_select = re.split("select ", before_from, flags=re.IGNORECASE)[1]
-    fields = after_select.replace(" ", "").split(",")
+    fields = set(after_select.replace(" ", "").split(","))
     
     return fields
 
@@ -149,6 +149,9 @@ def _smart_query(
     # Determine the Salesforce object by parsing the query
     object = getattr(self.bulk, _determine_object(query))
 
+    # Determine the fields by parsing the query
+    fields = _determine_fields(query)
+
     if filter_field is not None and filter_values is not None:
         sub_queries = _generate_sub_queries(query, filter_field, filter_values, not_in)
     else:
@@ -164,10 +167,15 @@ def _smart_query(
         
     # If the query didn't output any records, add the columns for output consistency
     if output_df.shape[0] == 0:
-        # Determine the columns from the query
-        output_df = pd.DataFrame(columns=_determine_fields(query))
+        output_df = pd.DataFrame(columns=list(fields))
     else:
         pass
+
+    # Remove any unrequested columns that were returned
+    #   This can happen for example in the query "SELECT Account.Id FROM Contact", infact
+    #   if contacts that are not linked to an account are present, the additional column "Account" is returned.
+    unrequested_columns = [c for c in output_df.columns if c not in fields]
+    output_df.drop(columns=unrequested_columns, inplace=True)
                     
     return output_df
 
