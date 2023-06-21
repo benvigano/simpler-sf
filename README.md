@@ -10,7 +10,6 @@ Extending the low-level Salesforce API client [Simple Salesforce](https://github
 import simpler_sf
 simpler_sf.simple_salesforce()
 import simple_salesforce
-# That's it!
 ```
 ### Query
 Simpler-sf adds the `smart_query()` method to the `simple_salesforce.Salesforce` class.
@@ -25,14 +24,14 @@ The advantages over the existing methods are:
 #### Example
 ```python 
 sf = simple_salesforce.Salesforce(username=username, password=password, security_token=token)
-df = sf.smart_query('SELECT Contact.Id, Contact.FirstName, Account.Name, Campaign FROM CampaignMember')
+df = sf.smart_query('SELECT Contact.Id, Contact.FirstName, Contact.Account.Name, Campaign.Name FROM CampaignMember')
 print(df)
 ```
 Output:
 ```
-            Contact.Id   Contact.FirstName   Account.Name           Campaign
-0   0032400000QZbmtAAD               Emily         Amazon   CampaignA_2023Q2
-1   0032400000eGqdZAAS             Jasmine         Amazon   CampaignA_2023Q2
-2   00324036u9QZbnGAAT                Míng      Microsoft   CampaignB_2022Q4
-3   0032400000QZbygAAX           Magdalena         Google   CampaignC_2023Q1
+            Contact.Id   Contact.FirstName   Contact.Account.Name      Campaign.Name
+0   0032400000QZbmtAAD               Emily                 Amazon   CampaignA_2023Q2
+1   0032400000eGqdZAAS             Jasmine                 Amazon   CampaignA_2023Q2
+2   00324036u9QZbnGAAT                Míng              Microsoft   CampaignB_2022Q4
+3   0032400000QZbygAAX           Magdalena                 Google   CampaignC_2023Q1
 ```
