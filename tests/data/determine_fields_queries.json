@@ -1,0 +1,64 @@
+{
+  "valid": [
+    {
+      "query": "SELECT Name, Id FROM Account",
+      "expected": ["Name", "Id"]
+    },
+    {
+      "query": "select id from contact",
+      "expected": ["id"]
+    },
+    {
+      "query": "SELECT COUNT(), CreatedDate FROM Case ORDER BY CreatedDate DESC",
+      "expected": ["COUNT()", "CreatedDate"]
+    },
+    {
+      "query": "SeLeCt Foo,Bar,Baz FROM   Something",
+      "expected": ["Foo", "Bar", "Baz"]
+    },
+    {
+      "query": "SELECT   Name  ,  Id   FROM   Lead",
+      "expected": ["Name", "Id"]
+    }
+  ],
+  "invalid": [
+    {
+      "query": "SELECT FROM Account",
+      "exception_substring": "Unable to extract fields between SELECT and FROM."
+    },
+    {
+      "query": "This is not a valid SOQL",
+      "exception_substring": "No 'SELECT' clause found in the query."
+    },
+    {
+      "query": "SELECT Id, Name",
+      "exception_substring": "No 'FROM' clause found"
+    },
+    {
+      "query": "from Account",
+      "exception_substring": "No 'SELECT' clause found"
+    },
+    {
+      "query": null,
+      "exception_substring": "Query must be a string."
+    }
+  ],
+  "edge_cases": [
+    {
+      "query": "SELECT  Name ,, Id  FROM Account",
+      "expected": ["Name", "Id"]
+    },
+    {
+      "query": "SELECT      Id     FROM Opportunity",
+      "expected": ["Id"]
+    },
+    {
+      "query": "SELECT Name, Id,  ,   ,  Email FROM Contact",
+      "expected": ["Name", "Id", "Email"]
+    },
+    {
+      "query": "SELECT FIELD__c FROM Custom_Object__c",
+      "expected": ["FIELD__c"]
+    }
+  ]
+}

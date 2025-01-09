@@ -1,0 +1,92 @@
+{
+  "valid": [
+    {
+      "query": "SELECT Id, Name FROM Account",
+      "expected": "Account"
+    },
+    {
+      "query": "select id from contact where lastname = 'Smith'",
+      "expected": "contact"
+    },
+    {
+      "query": "SELECT COUNT() FROM Case ORDER BY CreatedDate DESC",
+      "expected": "Case"
+    },
+    {
+      "query": "SeLeCt Foo FROM Bar",
+      "expected": "Bar"
+    },
+    {
+      "query": "SELECT Id FROM Opportunity LIMIT 10",
+      "expected": "Opportunity"
+    },
+    {
+      "query": "  SELECT   Id   FROM   Lead  ",
+      "expected": "Lead"
+    },
+    {
+      "query": "SELECT Name, Id FROM Account WHERE Id = '3r78th103487thq8137'",
+      "expected": "Account"
+    },
+    {
+      "query": "SELECT Name, Id FROM\nAccount WHERE Id = '3r78th103487thq8137'",
+      "expected": "Account"
+    },
+    {
+      "query": "SELECT Name, Id FROM\nContact\nLIMIT 10'",
+      "expected": "Contact"
+    },
+    {
+      "query": "SELECT Name, Id FROM Account\n",
+      "expected": "Account"
+    },
+    {
+      "query": "select Name, Id from Account where Id = '3r78th103487thq8137'\n",
+      "expected": "Account"
+    },
+    {
+      "query": "SELECT Name, Id From\nContact\nLIMIT 10'",
+      "expected": "Contact"
+    },
+    {
+      "query": "SELECT Name, Id\nFrom Account\nLIMIT 10'",
+      "expected": "Account"
+    }
+  ],
+  "invalid": [
+    {
+      "query": "SELECT Id, Name",
+      "exception_substring": "No 'FROM' clause found"
+    },
+    {
+      "query": "Not valid SOQL",
+      "exception_substring": "No 'FROM' clause found"
+    },
+    {
+      "query": "from",
+      "exception_substring": "No 'FROM' clause found"
+    },
+    {
+      "query": null,
+      "exception_substring": "Query must be a string."
+    }
+  ],
+  "edge_cases": [
+    {
+      "query": "SELECT   Id FROM   Custom_Object__c    WHERE Field__c = 'Value'",
+      "expected": "Custom_Object__c"
+    },
+    {
+      "query": "select id from contact",
+      "expected": "contact"
+    },
+    {
+      "query": "SELECT FIELD FROM My_Object_v2",
+      "expected": "My_Object_v2"
+    },
+    {
+      "query": "SELECT x FROM z.y__c",
+      "expected": "z.y__c"
+    }
+  ]
+}

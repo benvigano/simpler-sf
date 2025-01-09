@@ -5,6 +5,10 @@ from tqdm import tqdm
 import re
 
 
+class SalesforceQueryParsingError(Exception):
+    """Salesforce query parsing error."""
+
+
 def _recursive_unnest(data, parent_path='', results={}):
     '''Recursively un-nest records'''
     for current_level_key in data:
@@ -70,23 +74,62 @@ def _unnest_query_output(records) -> dict:
     return results
 
 
-def _determine_object(query):
-    '''Parse a query to determine the Salesforce object'''
+def _determine_object(query: str) -> str:
+    """
+    Extract the Salesforce object name from a SOQL query string.
+    """
 
-    if " from " not in query.lower():
-        raise Exception(f"'FROM' statement not found in query '{query.lower()}'")
+    if not isinstance(query, str):
+        raise TypeError("Query must be a string.")
 
-    return re.split(" from ", query, flags=re.IGNORECASE)[1].split(" ")[0]
+    # Normalize whitespaces
+    normalized_query = ' '.join(query.split())
+
+    # Regex pattern:
+    # - \bfrom\b matches 'FROM' as a separate word (case-insensitive)
+    # - \s+ matches one or more spaces
+    # - ([A-Za-z0-9_.]+) extracts a word consisting of letters, digits, underscores, or periods.
+    pattern = re.compile(r"\bfrom\s+([A-Za-z0-9_.]+)", re.IGNORECASE)
+    match = pattern.search(normalized_query)
+
+    if not match:
+        raise SalesforceQueryParsingError("No 'FROM' clause found in the query.")
+
+    object_name = match.group(1)
+
+    return object_name
 
 
-def _determine_fields(query):
-    '''Parse a query to determine the fields'''
-    
-    before_from = re.split(" from ", query, flags=re.IGNORECASE)[0]
-    after_select = re.split("select ", before_from, flags=re.IGNORECASE)[1]
-    fields = set(after_select.replace(" ", "").split(","))
-    
-    return fields
+def _determine_fields(query: str) -> list:
+    """
+    Extract the fields selected in a SOQL query.
+    """
+    if not isinstance(query, str):
+        raise TypeError("Query must be a string.")
+
+    # Normalize whitespaces
+    normalized_query = ' '.join(query.split())
+
+    # Check for presence of SELECT and FROM
+    if re.search(r"\bselect\b", normalized_query, re.IGNORECASE) is None:
+        raise SalesforceQueryParsingError("No 'SELECT' clause found in the query.")
+    if re.search(r"\bfrom\b", normalized_query, re.IGNORECASE) is None:
+        raise SalesforceQueryParsingError("No 'FROM' clause found in the query.")
+
+    # Extract substring between SELECT and FROM with regex
+    match = re.search(r"\bselect\b\s+(.*?)\s+\bfrom\b", normalized_query, flags=re.IGNORECASE)
+    if not match:
+        raise SalesforceQueryParsingError("Unable to extract fields between SELECT and FROM.")
+
+    fields_str = match.group(1)
+
+    # Split by comma and strip whitespaces
+    fields = [f.strip() for f in fields_str.split(',') if f.strip()]
+
+    if not fields:
+        raise SalesforceQueryParsingError("No fields found in the query.")
+
+    return set(fields)
 
 
 def _generate_sub_queries(query, filter_field, filter_values, not_in):
