@@ -1,0 +1,149 @@
+{
+  "valid": [
+    {
+      "id" : 1,
+      "raw_output": [
+        {
+          "Contact": {
+            "Account": {
+              "CTRY__c": "GB",
+              "Headquarter_Account__r": {
+                "Headquarter_Account__r": {
+                  "Name": "EVERYBODY SPORT & RECREATION GROUP",
+                  "attributes": {
+                    "type": "Account",
+                    "url": "/services/data/v57.0/sobjects/Account/00108000038C0hcAAC"
+                  }
+                },
+                "Range_employees__c": "500-999",
+                "attributes": {
+                  "type": "Account",
+                  "url": "/services/data/v57.0/sobjects/Account/0010800002tutL7AAI"
+                }
+              },
+              "Id": "0010800002tvQC4AAM",
+              "attributes": {
+                "type": "Account",
+                "url": "/services/data/v57.0/sobjects/Account/0010800002tvQC4AAM"
+              }
+            },
+            "Id": "0030800002GmHQLAA3",
+            "Seniority__c": "Management Level",
+            "attributes": {
+              "type": "Contact",
+              "url": "/services/data/v57.0/sobjects/Contact/0030800002GmHQLAA3"
+            }
+          },
+          "attributes": {
+            "type": "CampaignMember",
+            "url": "/services/data/v57.0/sobjects/CampaignMember/00vR2000004J6FMIA0"
+          }
+        },
+        {
+          "Contact": {
+            "Account": {
+              "CTRY__c": "GB",
+              "Headquarter_Account__r": {
+                "Headquarter_Account__r": {
+                  "Name": "EVERYBODY SPORT & RECREATION GROUP",
+                  "attributes": {
+                    "type": "Account",
+                    "url": "/services/data/v57.0/sobjects/Account/00108000038C0hcAAC"
+                  }
+                },
+                "Range_employees__c": "500-999",
+                "attributes": {
+                  "type": "Account",
+                  "url": "/services/data/v57.0/sobjects/Account/0010800002tutL7AAI"
+                }
+              },
+              "Id": "0010800002tvQC4AAM",
+              "attributes": {
+                "type": "Account",
+                "url": "/services/data/v57.0/sobjects/Account/0010800002tvQC4AAM"
+              }
+            },
+            "Id": "0030800002GmWKpAAN",
+            "Seniority__c": "Management Level",
+            "attributes": {
+              "type": "Contact",
+              "url": "/services/data/v57.0/sobjects/Contact/0030800002GmWKpAAN"
+            }
+          },
+          "attributes": {
+            "type": "CampaignMember",
+            "url": "/services/data/v57.0/sobjects/CampaignMember/00vR2000004JYtgIAG"
+          }
+        },
+        {
+          "Contact": {
+            "Account": {
+              "CTRY__c": "GB",
+              "Headquarter_Account__r": {
+                "Headquarter_Account__r": {
+                  "Name": "EVERYBODY SPORT & RECREATION GROUP",
+                  "attributes": {
+                    "type": "Account",
+                    "url": "/services/data/v57.0/sobjects/Account/00108000038C0hcAAC"
+                  }
+                },
+                "Range_employees__c": "500-999",
+                "attributes": {
+                  "type": "Account",
+                  "url": "/services/data/v57.0/sobjects/Account/0010800002tutL7AAI"
+                }
+              },
+              "Id": "0010800002tvQC4AAM",
+              "attributes": {
+                "type": "Account",
+                "url": "/services/data/v57.0/sobjects/Account/0010800002tvQC4AAM"
+              }
+            },
+            "Id": "0030800002GmeHDAAZ",
+            "Seniority__c": "Management Level",
+            "attributes": {
+              "type": "Contact",
+              "url": "/services/data/v57.0/sobjects/Contact/0030800002GmeHDAAZ"
+            }
+          },
+          "attributes": {
+            "type": "CampaignMember",
+            "url": "/services/data/v57.0/sobjects/CampaignMember/00vR2000004JMK6IAO"
+          }
+        }
+      ],
+      "unnested_output": {
+        "Contact.Id": [
+          "0030800002GmHQLAA3",
+          "0030800002GmWKpAAN",
+          "0030800002GmeHDAAZ"
+        ],
+        "Contact.Seniority__c": [
+          "Management Level",
+          "Management Level",
+          "Management Level"
+        ],
+        "Contact.Account.CTRY__c": [
+          "GB",
+          "GB",
+          "GB"
+        ],
+        "Contact.Account.Id": [
+          "0010800002tvQC4AAM",
+          "0010800002tvQC4AAM",
+          "0010800002tvQC4AAM"
+        ],
+        "Contact.Account.Headquarter_Account__r.Range_employees__c": [
+          "500-999",
+          "500-999",
+          "500-999"
+        ],
+        "Contact.Account.Headquarter_Account__r.Headquarter_Account__r.Name": [
+          "EVERYBODY SPORT & RECREATION GROUP",
+          "EVERYBODY SPORT & RECREATION GROUP",
+          "EVERYBODY SPORT & RECREATION GROUP"
+        ]
+      }
+    }
+  ]
+}
