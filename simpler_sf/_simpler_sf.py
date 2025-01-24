@@ -9,8 +9,11 @@ class SalesforceQueryParsingError(Exception):
     """Salesforce query parsing error."""
 
 
-def _recursive_unnest(data, parent_path='', results={}):
+def _recursive_unnest(data, parent_path='', results=None):
     '''Recursively un-nest records'''
+    if results is None:
+        results = {}
+
     for current_level_key in data:
         path = '.'.join(filter(None, [parent_path, current_level_key]))
         if isinstance(data[current_level_key], Mapping) and "attributes" in data[current_level_key]:
