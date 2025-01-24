@@ -144,6 +144,560 @@
           "EVERYBODY SPORT & RECREATION GROUP"
         ]
       }
+    },
+    {
+      "id": 2,
+      "raw_output": [
+        {
+          "Contact": {
+            "Account": {
+              "CTRY__c": "US",
+              "Headquarter_Account__r": {
+                "Headquarter_Account__r": {
+                  "Name": "Tech Innovators Inc.",
+                  "attributes": {
+                    "type": "Account",
+                    "url": "/services/data/v57.0/sobjects/Account/00108000039A9uKAAR"
+                  }
+                },
+                "Range_employees__c": "100-499",
+                "attributes": {
+                  "type": "Account",
+                  "url": "/services/data/v57.0/sobjects/Account/0010800002tutL7AAI"
+                }
+              },
+              "Id": "0010800003a9uCFAAS",
+              "attributes": {
+                "type": "Account",
+                "url": "/services/data/v57.0/sobjects/Account/0010800003a9uCFAAS"
+              }
+            },
+            "Id": "0030800002Fg2JKAA4",
+            "Seniority__c": "Senior Executive",
+            "attributes": {
+              "type": "Contact",
+              "url": "/services/data/v57.0/sobjects/Contact/0030800002Fg2JKAA4"
+            }
+          },
+          "attributes": {
+            "type": "CampaignMember",
+            "url": "/services/data/v57.0/sobjects/CampaignMember/00vR2000004G5dKIAD"
+          }
+        }
+      ],
+      "unnested_output": {
+        "Contact.Id": [
+          "0030800002Fg2JKAA4"
+        ],
+        "Contact.Seniority__c": [
+          "Senior Executive"
+        ],
+        "Contact.Account.CTRY__c": [
+          "US"
+        ],
+        "Contact.Account.Id": [
+          "0010800003a9uCFAAS"
+        ],
+        "Contact.Account.Headquarter_Account__r.Range_employees__c": [
+          "100-499"
+        ],
+        "Contact.Account.Headquarter_Account__r.Headquarter_Account__r.Name": [
+          "Tech Innovators Inc."
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "raw_output": [
+        {
+          "Contact": {
+            "Account": {
+              "CTRY__c": "FR",
+              "Headquarter_Account__r": {
+                "Headquarter_Account__r": {
+                  "Name": "Global Enterprises Ltd.",
+                  "attributes": {
+                    "type": "Account",
+                    "url": "/services/data/v57.0/sobjects/Account/00108000038V0tFAAC"
+                  }
+                },
+                "Range_employees__c": "1000-4999",
+                "attributes": {
+                  "type": "Account",
+                  "url": "/services/data/v57.0/sobjects/Account/0010800003bptW9AAI"
+                }
+              },
+              "Id": "0010800003tv8bLAAS",
+              "attributes": {
+                "type": "Account",
+                "url": "/services/data/v57.0/sobjects/Account/0010800003tv8bLAAS"
+              }
+            },
+            "Id": "0030800002Gg5JKAA5",
+            "Seniority__c": "Mid-Level Management",
+            "attributes": {
+              "type": "Contact",
+              "url": "/services/data/v57.0/sobjects/Contact/0030800002Gg5JKAA5"
+            }
+          },
+          "attributes": {
+            "type": "CampaignMember",
+            "url": "/services/data/v57.0/sobjects/CampaignMember/00vR2000004H2fAIA0"
+          }
+        },
+        {
+          "Contact": {
+            "Account": {
+              "CTRY__c": "FR",
+              "Headquarter_Account__r": {
+                "Headquarter_Account__r": {
+                  "Name": "Global Enterprises Ltd.",
+                  "attributes": {
+                    "type": "Account",
+                    "url": "/services/data/v57.0/sobjects/Account/00108000038V0tFAAC"
+                  }
+                },
+                "Range_employees__c": "1000-4999",
+                "attributes": {
+                  "type": "Account",
+                  "url": "/services/data/v57.0/sobjects/Account/0010800003bptW9AAI"
+                }
+              },
+              "Id": "0010800003tv8bLAAS",
+              "attributes": {
+                "type": "Account",
+                "url": "/services/data/v57.0/sobjects/Account/0010800003tv8bLAAS"
+              }
+            },
+            "Id": "0030800002Gg6JKAA6",
+            "Seniority__c": "Junior Executive",
+            "attributes": {
+              "type": "Contact",
+              "url": "/services/data/v57.0/sobjects/Contact/0030800002Gg6JKAA6"
+            }
+          },
+          "attributes": {
+            "type": "CampaignMember",
+            "url": "/services/data/v57.0/sobjects/CampaignMember/00vR2000004H2gAIA1"
+          }
+        }
+      ],
+      "unnested_output": {
+        "Contact.Id": [
+          "0030800002Gg5JKAA5",
+          "0030800002Gg6JKAA6"
+        ],
+        "Contact.Seniority__c": [
+          "Mid-Level Management",
+          "Junior Executive"
+        ],
+        "Contact.Account.CTRY__c": [
+          "FR",
+          "FR"
+        ],
+        "Contact.Account.Id": [
+          "0010800003tv8bLAAS",
+          "0010800003tv8bLAAS"
+        ],
+        "Contact.Account.Headquarter_Account__r.Range_employees__c": [
+          "1000-4999",
+          "1000-4999"
+        ],
+        "Contact.Account.Headquarter_Account__r.Headquarter_Account__r.Name": [
+          "Global Enterprises Ltd.",
+          "Global Enterprises Ltd."
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "raw_output": [
+        {
+          "Contact": {
+            "Account": {
+              "CTRY__c": "IT",
+              "Headquarter_Account__r": {
+                "Headquarter_Account__r": {
+                  "Name": "Italian Industries",
+                  "attributes": {
+                    "type": "Account",
+                    "url": "/services/data/v57.0/sobjects/Account/0010800004Yf4fEAAZ"
+                  }
+                },
+                "Range_employees__c": "500-999",
+                "attributes": {
+                  "type": "Account",
+                  "url": "/services/data/v57.0/sobjects/Account/0010800003Yh3wGAAI"
+                }
+              },
+              "Id": "0010800004t7vMLAAM",
+              "attributes": {
+                "type": "Account",
+                "url": "/services/data/v57.0/sobjects/Account/0010800004t7vMLAAM"
+              }
+            },
+            "Id": "0030800003Gv2MAA8",
+            "Seniority__c": "Senior Manager",
+            "attributes": {
+              "type": "Contact",
+              "url": "/services/data/v57.0/sobjects/Contact/0030800003Gv2MAA8"
+            }
+          },
+          "attributes": {
+            "type": "CampaignMember",
+            "url": "/services/data/v57.0/sobjects/CampaignMember/00vR2000004I3tKIA8"
+          }
+        }
+      ],
+      "unnested_output": {
+        "Contact.Id": [
+          "0030800003Gv2MAA8"
+        ],
+        "Contact.Seniority__c": [
+          "Senior Manager"
+        ],
+        "Contact.Account.CTRY__c": [
+          "IT"
+        ],
+        "Contact.Account.Id": [
+          "0010800004t7vMLAAM"
+        ],
+        "Contact.Account.Headquarter_Account__r.Range_employees__c": [
+          "500-999"
+        ],
+        "Contact.Account.Headquarter_Account__r.Headquarter_Account__r.Name": [
+          "Italian Industries"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "raw_output": [
+        {
+          "Contact": {
+            "Account": {
+              "CTRY__c": "ES",
+              "Headquarter_Account__r": {
+                "Headquarter_Account__r": {
+                  "Name": "Spanish Enterprises",
+                  "attributes": {
+                    "type": "Account",
+                    "url": "/services/data/v57.0/sobjects/Account/0010800004Xf2vAAAZ"
+                  }
+                },
+                "Range_employees__c": "200-499",
+                "attributes": {
+                  "type": "Account",
+                  "url": "/services/data/v57.0/sobjects/Account/0010800003Zf4wVAAI"
+                }
+              },
+              "Id": "0010800004s7yVFAAR",
+              "attributes": {
+                "type": "Account",
+                "url": "/services/data/v57.0/sobjects/Account/0010800004s7yVFAAR"
+              }
+            },
+            "Id": "0030800002Fh9FIAA9",
+            "Seniority__c": "Junior Manager",
+            "attributes": {
+              "type": "Contact",
+              "url": "/services/data/v57.0/sobjects/Contact/0030800002Fh9FIAA9"
+            }
+          },
+          "attributes": {
+            "type": "CampaignMember",
+            "url": "/services/data/v57.0/sobjects/CampaignMember/00vR2000004J2sKIAB"
+          }
+        }
+      ],
+      "unnested_output": {
+        "Contact.Id": [
+          "0030800002Fh9FIAA9"
+        ],
+        "Contact.Seniority__c": [
+          "Junior Manager"
+        ],
+        "Contact.Account.CTRY__c": [
+          "ES"
+        ],
+        "Contact.Account.Id": [
+          "0010800004s7yVFAAR"
+        ],
+        "Contact.Account.Headquarter_Account__r.Range_employees__c": [
+          "200-499"
+        ],
+        "Contact.Account.Headquarter_Account__r.Headquarter_Account__r.Name": [
+          "Spanish Enterprises"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "raw_output": [
+        {
+          "Contact": {
+            "Account": {
+              "CTRY__c": "DE",
+              "Headquarter_Account__r": {
+                "Headquarter_Account__r": {
+                  "Name": "German Technologies",
+                  "attributes": {
+                    "type": "Account",
+                    "url": "/services/data/v57.0/sobjects/Account/0010800004Zf8pOAAZ"
+                  }
+                },
+                "Range_employees__c": "3000+",
+                "attributes": {
+                  "type": "Account",
+                  "url": "/services/data/v57.0/sobjects/Account/0010800004Zj9aHAAI"
+                }
+              },
+              "Id": "0010800004p7vLMYZZ",
+              "attributes": {
+                "type": "Account",
+                "url": "/services/data/v57.0/sobjects/Account/0010800004p7vLMYZZ"
+              }
+            },
+            "Id": "0030800003Fw7FIAA8",
+            "Seniority__c": "Chief Executive Officer",
+            "attributes": {
+              "type": "Contact",
+              "url": "/services/data/v57.0/sobjects/Contact/0030800003Fw7FIAA8"
+            }
+          },
+          "attributes": {
+            "type": "CampaignMember",
+            "url": "/services/data/v57.0/sobjects/CampaignMember/00vR2000004H8sKIAC"
+          }
+        }
+      ],
+      "unnested_output": {
+        "Contact.Id": [
+          "0030800003Fw7FIAA8"
+        ],
+        "Contact.Seniority__c": [
+          "Chief Executive Officer"
+        ],
+        "Contact.Account.CTRY__c": [
+          "DE"
+        ],
+        "Contact.Account.Id": [
+          "0010800004p7vLMYZZ"
+        ],
+        "Contact.Account.Headquarter_Account__r.Range_employees__c": [
+          "3000+"
+        ],
+        "Contact.Account.Headquarter_Account__r.Headquarter_Account__r.Name": [
+          "German Technologies"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "raw_output": [
+        {
+          "Contact": {
+            "Account": {
+              "CTRY__c": "IN",
+              "Id": "0010800004yFbHMAAA",
+              "attributes": {
+                "type": "Account",
+                "url": "/services/data/v57.0/sobjects/Account/0010800004yFbHMAAA"
+              }
+            },
+            "Id": "0030800003zFj2SAAA",
+            "Seniority__c": "Lead",
+            "attributes": {
+              "type": "Contact",
+              "url": "/services/data/v57.0/sobjects/Contact/0030800003zFj2SAAA"
+            }
+          },
+          "attributes": {
+            "type": "CampaignMember",
+            "url": "/services/data/v57.0/sobjects/CampaignMember/00vR2000004H8tKIA8"
+          }
+        },
+        {
+          "Contact": {
+            "Account": {
+              "CTRY__c": "IN",
+              "Id": "0010800004yFbHMAAA",
+              "attributes": {
+                "type": "Account",
+                "url": "/services/data/v57.0/sobjects/Account/0010800004yFbHMAAA"
+              },
+              "Headquarter_Account__r": {
+                "Range_employees__c": "10-49",
+                "attributes": {
+                  "type": "Account",
+                  "url": "/services/data/v57.0/sobjects/Account/0010800005Zf3xRABZ"
+                }
+              }
+            },
+            "Id": "0030800003zFk2RABB",
+            "Seniority__c": "Manager",
+            "attributes": {
+              "type": "Contact",
+              "url": "/services/data/v57.0/sobjects/Contact/0030800003zFk2RABB"
+            }
+          },
+          "attributes": {
+            "type": "CampaignMember",
+            "url": "/services/data/v57.0/sobjects/CampaignMember/00vR2000004H8tKIA9"
+          }
+        }
+      ],
+      "unnested_output": {
+        "Contact.Id": [
+          "0030800003zFj2SAAA",
+          "0030800003zFk2RABB"
+        ],
+        "Contact.Seniority__c": [
+          "Lead",
+          "Manager"
+        ],
+        "Contact.Account.CTRY__c": [
+          "IN",
+          "IN"
+        ],
+        "Contact.Account.Id": [
+          "0010800004yFbHMAAA",
+          "0010800004yFbHMAAA"
+        ],
+        "Contact.Account.Headquarter_Account__r.Range_employees__c": [
+          "-",
+          "10-49"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "raw_output": [
+        {
+          "Contact": {
+            "Account": {
+              "CTRY__c": "FR",
+              "Headquarter_Account__r": {
+                "Range_employees__c": "2000-4999",
+                "attributes": {
+                  "type": "Account",
+                  "url": "/services/data/v57.0/sobjects/Account/00108000038V0sFAAC"
+                }
+              },
+              "Id": "0010800003pU1aHAAR",
+              "attributes": {
+                "type": "Account",
+                "url": "/services/data/v57.0/sobjects/Account/0010800003pU1aHAAR"
+              }
+            },
+            "Id": "0030800002Fg8KJAAA",
+            "Seniority__c": null,
+            "attributes": {
+              "type": "Contact",
+              "url": "/services/data/v57.0/sobjects/Contact/0030800002Fg8KJAAA"
+            }
+          },
+          "attributes": {
+            "type": "CampaignMember",
+            "url": "/services/data/v57.0/sobjects/CampaignMember/00vR2000004G4hKIAC"
+          }
+        },
+        {
+          "Contact": {
+            "Account": {
+              "CTRY__c": "FR",
+              "Id": "0010800003pU1aHAAR",
+              "attributes": {
+                "type": "Account",
+                "url": "/services/data/v57.0/sobjects/Account/0010800003pU1aHAAR"
+              }
+            },
+            "Id": "0030800002Fg9KJABB",
+            "Seniority__c": "Junior",
+            "attributes": {
+              "type": "Contact",
+              "url": "/services/data/v57.0/sobjects/Contact/0030800002Fg9KJABB"
+            }
+          },
+          "attributes": {
+            "type": "CampaignMember",
+            "url": "/services/data/v57.0/sobjects/CampaignMember/00vR2000004G4hKIA9"
+          }
+        }
+      ],
+      "unnested_output": {
+        "Contact.Id": [
+          "0030800002Fg8KJAAA",
+          "0030800002Fg9KJABB"
+        ],
+        "Contact.Seniority__c": [
+          "-",
+          "Junior"
+        ],
+        "Contact.Account.CTRY__c": [
+          "FR",
+          "FR"
+        ],
+        "Contact.Account.Id": [
+          "0010800003pU1aHAAR",
+          "0010800003pU1aHAAR"
+        ],
+        "Contact.Account.Headquarter_Account__r.Range_employees__c": [
+          "2000-4999",
+          "-"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "raw_output": [
+        {
+          "Contact": {
+            "Account": {
+              "CTRY__c": null,
+              "Headquarter_Account__r": {
+                "Range_employees__c": "500-999",
+                "attributes": {
+                  "type": "Account",
+                  "url": "/services/data/v57.0/sobjects/Account/0010800004Xy9gQAAS"
+                }
+              },
+              "Id": "0010800003z9uFDZZZ",
+              "attributes": {
+                "type": "Account",
+                "url": "/services/data/v57.0/sobjects/Account/0010800003z9uFDZZZ"
+              }
+            },
+            "Id": "0030800003z9uKDAAZ",
+            "Seniority__c": "Head of Department",
+            "attributes": {
+              "type": "Contact",
+              "url": "/services/data/v57.0/sobjects/Contact/0030800003z9uKDAAZ"
+            }
+          },
+          "attributes": {
+            "type": "CampaignMember",
+            "url": "/services/data/v57.0/sobjects/CampaignMember/00vR2000004Z3tKIA3"
+          }
+        }
+      ],
+      "unnested_output": {
+        "Contact.Id": [
+          "0030800003z9uKDAAZ"
+        ],
+        "Contact.Seniority__c": [
+          "Head of Department"
+        ],
+        "Contact.Account.CTRY__c": [
+          "-"
+        ],
+        "Contact.Account.Id": [
+          "0010800003z9uFDZZZ"
+        ],
+        "Contact.Account.Headquarter_Account__r.Range_employees__c": [
+          "500-999"
+        ]
+      }
     }
   ]
 }
