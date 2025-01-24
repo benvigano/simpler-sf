@@ -10,19 +10,24 @@ class SalesforceQueryParsingError(Exception):
 
 
 def _recursive_unnest(data, parent_path='', results=None):
-    '''Recursively un-nest records'''
+    """
+    Helper function for `_unnest_query_output`.
+
+    Recursively flatten a dictionary-like object by concatenating
+    nested keys with a dot separator. Keys named 'attributes' are skipped.
+    """
     if results is None:
         results = {}
 
-    for current_level_key in data:
-        path = '.'.join(filter(None, [parent_path, current_level_key]))
-        if isinstance(data[current_level_key], Mapping) and "attributes" in data[current_level_key]:
-            results = _recursive_unnest(data[current_level_key], path, results)
+    for key, value in data.items():
+        path = '.'.join(filter(None, [parent_path, key]))
+        # If it's a nested dictionary that contains 'attributes', keep un-nesting
+        if isinstance(value, Mapping) and 'attributes' in value:
+            _recursive_unnest(value, path, results)
         else:
-            if current_level_key != "attributes":
-                results[path] = data[current_level_key]
-            else:
-                pass
+            if key != 'attributes':
+                results[path] = value
+
     return results
 
 
@@ -30,48 +35,41 @@ def _unnest_query_output(records) -> dict:
     '''
     Un-nests the records.
     For relationship queries Salesforce returns nested results.
+
+    """
+    Un-nest the dictionary records Salesforce returns for relationship queries.
+    Preserves exact behavior:
+      - Missing fields at any row get a blank filler ("-").
+      - Null values become blank filler.
+      - The final return is a dict of lists, one list per unique flattened key.
+    """
+
     '''
 
     blank_filler = "-"
-
-    # Store the unnested records in a dictionary
     results = {}
 
     for record in records:
+        # Flatten the record
         unnested_record = _recursive_unnest(record)
-        
-        # Get the row index, to know how many blank fillers
-        # to insert in case a new field is found
-        if len(results.keys()) != 0:
-            row_ix = len(results[list(results.keys())[0]])
-        else:
-            row_ix = 0
 
-        '''
-        Notice: when a record has a nan value, that field is not included in the record dictionary
+        # Determine how many rows are currently in results
+        # (needed to align new fields with old rows)
+        current_row_count = (
+            len(next(iter(results.values()))) if results else 0
+        )
 
-        If the record has a field that wasn't present in the previous records,
-        insert as many blank fillers as the number of previous records.
-        Note: in the first iteration this will just write in 'results' an empty list for each field.
-        '''
+        # Ensure newly discovered keys get aligned with previous records
         for key in unnested_record:
-            if key not in list(results.keys()):
-                results[key] = [blank_filler] * row_ix
+            if key not in results:
+                results[key] = [blank_filler] * current_row_count
 
+        # Add either the actual value or a filler for each known key
         for key in results:
-            # If the key is present in this record
             if key in unnested_record:
-                # And if it's not null
-                if unnested_record[key] is not None:
-                    # Append it's value to its list inside 'results' 
-                    results[key].append(unnested_record[key])
-                # If it's present but null
-                else:
-                    # Append a blank filler to its list inside 'results'
-                    results[key].append(blank_filler)
-            # If this record doesn't contatain this key
+                val = unnested_record[key]
+                results[key].append(val if val is not None else blank_filler)
             else:
-                # Append a blank filler to its list inside 'results'
                 results[key].append(blank_filler)
 
     return results
