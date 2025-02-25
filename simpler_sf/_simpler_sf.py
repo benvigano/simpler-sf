@@ -39,34 +39,22 @@ def _unnest_query_output(records) -> pd.DataFrame:
       - Null values become blank filler.
       - The final return is a pandas DataFrame with columns being the flattened keys.
     '''
-
+    if not records:
+        return pd.DataFrame()
+        
     blank_filler = "-"
-    results = {}
-
+    
+    # Flatten each record
+    flattened_records = []
     for record in records:
-        # Flatten the record
-        unnested_record = _recursive_unnest(record)
-
-        # Determine how many rows are currently in results
-        # (needed to align new fields with old rows)
-        current_row_count = (
-            len(next(iter(results.values()))) if results else 0
-        )
-
-        # Ensure newly discovered keys get aligned with previous records
-        for key in unnested_record:
-            if key not in results:
-                results[key] = [blank_filler] * current_row_count
-
-        # Add either the actual value or a filler for each known key
-        for key in results:
-            if key in unnested_record:
-                val = unnested_record[key]
-                results[key].append(val if val is not None else blank_filler)
-            else:
-                results[key].append(blank_filler)
-
-    return pd.DataFrame(results)
+        flat_record = {}
+        _recursive_unnest(record, results=flat_record)
+        flattened_records.append(flat_record)
+    
+    df = pd.DataFrame(flattened_records)
+    df = df.fillna(blank_filler)
+    
+    return df
 
 
 def _determine_object(query: str) -> str:
