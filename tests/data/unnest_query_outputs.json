@@ -698,6 +698,208 @@
           "500-999"
         ]
       }
+    },
+    {
+      "id": 10,
+      "raw_output": [
+        {
+          "Contact": {
+            "Account": {
+              "CTRY__c": "UK",
+              "Id": "0010800005pU8kLAAZ",
+              "attributes": {
+                "type": "Account",
+                "url": "/services/data/v57.0/sobjects/Account/0010800005pU8kLAAZ"
+              }
+            },
+            "Id": "0030800004Gs2LPAAZ",
+            "Seniority__c": "VP",
+            "attributes": {
+              "type": "Contact",
+              "url": "/services/data/v57.0/sobjects/Contact/0030800004Gs2LPAAZ"
+            }
+          },
+          "Campaign": {
+            "Name": "Summer Campaign",
+            "StartDate": "2023-06-01",
+            "attributes": {
+              "type": "Campaign",
+              "url": "/services/data/v57.0/sobjects/Campaign/00vR2000004L9tKIAS"
+            }
+          },
+          "attributes": {
+            "type": "CampaignMember",
+            "url": "/services/data/v57.0/sobjects/CampaignMember/00vR2000004L9tKIAS"
+          }
+        },
+        {
+          "Contact": {
+            "Account": {
+              "CTRY__c": "US",
+              "Id": "0010800005qF3jMAAZ",
+              "attributes": {
+                "type": "Account",
+                "url": "/services/data/v57.0/sobjects/Account/0010800005qF3jMAAZ"
+              }
+            },
+            "Id": "0030800004Ht6MNAAZ",
+            "Seniority__c": "Director",
+            "attributes": {
+              "type": "Contact",
+              "url": "/services/data/v57.0/sobjects/Contact/0030800004Ht6MNAAZ"
+            }
+          },
+          "attributes": {
+            "type": "CampaignMember",
+            "url": "/services/data/v57.0/sobjects/CampaignMember/00vR2000004K2tZIAS"
+          }
+        }
+      ],
+      "unnested_output": {
+        "Contact.Id": [
+          "0030800004Gs2LPAAZ",
+          "0030800004Ht6MNAAZ"
+        ],
+        "Contact.Seniority__c": [
+          "VP",
+          "Director"
+        ],
+        "Contact.Account.CTRY__c": [
+          "UK",
+          "US"
+        ],
+        "Contact.Account.Id": [
+          "0010800005pU8kLAAZ",
+          "0010800005qF3jMAAZ"
+        ],
+        "Campaign.Name": [
+          "Summer Campaign",
+          "-"
+        ],
+        "Campaign.StartDate": [
+          "2023-06-01",
+          "-"
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "raw_output": [
+        {
+          "Contact": {
+            "Account": {
+              "CTRY__c": "JP",
+              "Parent": {
+                "Name": "Tokyo Corp",
+                "Industry": "Technology",
+                "attributes": {
+                  "type": "Account",
+                  "url": "/services/data/v57.0/sobjects/Account/0010800006Xz9pOAAZ"
+                }
+              },
+              "Id": "0010800006sH2kLAAZ",
+              "attributes": {
+                "type": "Account",
+                "url": "/services/data/v57.0/sobjects/Account/0010800006sH2kLAAZ"
+              }
+            },
+            "Id": "0030800005Hz2LPAAZ",
+            "Seniority__c": "Manager",
+            "attributes": {
+              "type": "Contact",
+              "url": "/services/data/v57.0/sobjects/Contact/0030800005Hz2LPAAZ"
+            }
+          },
+          "attributes": {
+            "type": "CampaignMember",
+            "url": "/services/data/v57.0/sobjects/CampaignMember/00vR2000005N8tLIAS"
+          }
+        },
+        {
+          "Contact": {
+            "Account": {
+              "CTRY__c": "JP",
+              "Id": "0010800006tK3jMAAZ",
+              "attributes": {
+                "type": "Account",
+                "url": "/services/data/v57.0/sobjects/Account/0010800006tK3jMAAZ"
+              }
+            },
+            "Id": "0030800005Ir6MNAAZ",
+            "Seniority__c": "Staff",
+            "attributes": {
+              "type": "Contact",
+              "url": "/services/data/v57.0/sobjects/Contact/0030800005Ir6MNAAZ"
+            }
+          },
+          "attributes": {
+            "type": "CampaignMember",
+            "url": "/services/data/v57.0/sobjects/CampaignMember/00vR2000005O2tZIAS"
+          }
+        }
+      ],
+      "unnested_output": {
+        "Contact.Id": [
+          "0030800005Hz2LPAAZ",
+          "0030800005Ir6MNAAZ"
+        ],
+        "Contact.Seniority__c": [
+          "Manager",
+          "Staff"
+        ],
+        "Contact.Account.CTRY__c": [
+          "JP",
+          "JP"
+        ],
+        "Contact.Account.Id": [
+          "0010800006sH2kLAAZ",
+          "0010800006tK3jMAAZ"
+        ],
+        "Contact.Account.Parent.Name": [
+          "Tokyo Corp",
+          "-"
+        ],
+        "Contact.Account.Parent.Industry": [
+          "Technology",
+          "-"
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "raw_output": [
+        {
+          "Contact": {
+            "HomeAddress": null,
+            "Id": "0030800006Jz5NPAAZ",
+            "Seniority__c": "Associate",
+            "attributes": {
+              "type": "Contact",
+              "url": "/services/data/v57.0/sobjects/Contact/0030800006Jz5NPAAZ"
+            }
+          },
+          "attributes": {
+            "type": "CampaignMember",
+            "url": "/services/data/v57.0/sobjects/CampaignMember/00vR2000006P9tLIAS"
+          }
+        }
+      ],
+      "unnested_output": {
+        "Contact.Id": [
+          "0030800006Jz5NPAAZ"
+        ],
+        "Contact.Seniority__c": [
+          "Associate"
+        ],
+        "Contact.HomeAddress": [
+          "-"
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "raw_output": [],
+      "unnested_output": {}
     }
   ]
 }
