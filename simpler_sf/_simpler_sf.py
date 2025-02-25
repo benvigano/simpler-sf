@@ -31,19 +31,13 @@ def _recursive_unnest(data, parent_path='', results=None):
     return results
 
 
-def _unnest_query_output(records) -> dict:
+def _unnest_query_output(records) -> pd.DataFrame:
     '''
-    Un-nests the records.
-    For relationship queries Salesforce returns nested results.
-
-    """
     Un-nest the dictionary records Salesforce returns for relationship queries.
     Preserves exact behavior:
       - Missing fields at any row get a blank filler ("-").
       - Null values become blank filler.
-      - The final return is a dict of lists, one list per unique flattened key.
-    """
-
+      - The final return is a pandas DataFrame with columns being the flattened keys.
     '''
 
     blank_filler = "-"
@@ -72,7 +66,7 @@ def _unnest_query_output(records) -> dict:
             else:
                 results[key].append(blank_filler)
 
-    return results
+    return pd.DataFrame(results)
 
 
 def _determine_object(query: str) -> str:
@@ -217,11 +211,10 @@ def _smart_query(
                  
     dfs = []
     for sub_query in tqdm(sub_queries) if len(sub_queries) > 1 else sub_queries:
-        results = _unnest_query_output(object.query(sub_query))    
-        partial_df = pd.DataFrame(results)
+        partial_df = _unnest_query_output(object.query(sub_query))    
         dfs.append(partial_df)
         
-    output_df = pd.concat(dfs)
+    output_df = pd.concat(dfs) if dfs else pd.DataFrame()
         
     # If the query didn't output any records, add the columns for output consistency
     if output_df.shape[0] == 0:
